@@ -1,3 +1,18 @@
+**/nbproject/private/
+**/nbproject/Makefile-*.mk
+**/nbproject/Package-*.bash
+
+project-root-directory/
+build/
+dist/
+nbproject/
+  build-impl.xml
+  private/
+  project.properties
+  project.xml
+test/
+build.xml
+
 # Compiled class file
 *.class
 
@@ -22,3 +37,4 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
+/unidad1/ED23_U1/*.mf
