@@ -25,13 +25,7 @@ public class Prueba {
         for (int i = 0; i < arreglo.tamanio(); i++) {
             System.out.println(arreglo.obtener(i));
         }
-       
-        Estudiante
-                NoControl
-                Nombre
-                Apellidos
-                Semestre
-        
+             
         
         
     }
