@@ -10,7 +10,7 @@ package unidad1.tdaGenerico;
  * @author paveg
  */
 public interface TDAArregloDinamico<T> {
-    //public int[] datos=new int[10];
+    
     /**
      * Busca un valor en la colección
      * @param valor dato a buscar
