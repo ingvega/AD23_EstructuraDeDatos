@@ -66,25 +66,25 @@ public class Estudiante {
         return getNoControl() + " - " + getNombre() + " " + 
                     getApellidos() + " - " + getSemestre();
     }
-//    @Override
-//    public boolean equals(Object obj){
-//        //Revisa si es la misma instancia
-//        if(obj==this) return true;
-//        
-//        //Identificar que obj sea un objeto y no null
-//        if(obj==null) return false;
-//        
-//        //Identificar que obj sea de tipo estudiante
-//        if(obj instanceof Estudiante){
-//            //Convertir obj a Estudiante
-//            Estudiante otroEstudiante=(Estudiante)obj;
-////"S22120001"="s22120001"            
-////Comparar los números de control
-//            if(otroEstudiante.getNoControl().equalsIgnoreCase(this.noControl)){
-//                return true;
-//            }
-//        }
-//        return false;
-//    }
+    @Override
+    public boolean equals(Object obj){
+        //Revisa si es la misma instancia
+        if(obj==this) return true;
+        
+        //Identificar que obj sea un objeto y no null
+        if(obj==null) return false;
+        
+        //Identificar que obj sea de tipo estudiante
+        if(obj instanceof Estudiante){
+            //Convertir obj a Estudiante
+            Estudiante otroEstudiante=(Estudiante)obj;
+//"S22120001"="s22120001"            
+//Comparar los números de control
+            if(otroEstudiante.getNoControl().equalsIgnoreCase(this.noControl)){
+                return true;
+            }
+        }
+        return false;
+    }
 
 }

@@ -25,7 +25,7 @@ public class UsoArrayListEquals {
         listaCadenas2.add("dgsdfsd");
         listaCadenas2.add("gsdfhg");
         
-        System.out.println(listaCadenas.equals(listaCadenas2));
+        //System.out.println(listaCadenas.equals(listaCadenas2));
         
         
         String cadena="www";
