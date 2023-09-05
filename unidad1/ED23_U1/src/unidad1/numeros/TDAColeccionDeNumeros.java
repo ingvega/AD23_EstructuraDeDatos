@@ -11,5 +11,13 @@ package unidad1.numeros;
  */
 public interface TDAColeccionDeNumeros {
     public void agregar(int numero);
-    public void agregar (int numero, int posicion);
+    public void agregar (int numero, int posicion) throws IndexOutOfBoundsException;
+    int[] numerosIngresados();
+    int[] numerosIngresadosSinDuplicados();
+    int reemplazarTodos(int numero, int nuevo);
+    void reemplazar(int posicion, int nuevo) throws IndexOutOfBoundsException;
+    int longitud();
+    int sumar();
+    double promedio();
+    void ordenar();
 }
