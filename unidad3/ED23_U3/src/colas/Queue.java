@@ -3,22 +3,24 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pilas;
+package colas;
 
 import java.util.Arrays;
 import java.util.EmptyStackException;
+import java.util.Iterator;
+import java.util.function.Consumer;
 
 /**
  *
  * @author paveg
  */
-public class Stack<T> extends ADTStack<T> {
+public class Queue<T> extends ADTQueue<T>{
     private Object[] arreglo=new Object[10];
     private int posicion=0;
     
     
     @Override
-    public void push(T valor) {
+    public void add(T valor) {
         if(arreglo.length>posicion){
             arreglo[posicion]=valor;
         }else{
@@ -29,17 +31,18 @@ public class Stack<T> extends ADTStack<T> {
     }
 
     @Override
-    public T pop() throws EmptyStackException {
-        arreglo[posicion-1]=null;
-        T valor=top();
+    public T remove() throws NullPointerException {
+        arreglo[0]=null;
+        arreglo=Arrays.copyOfRange(arreglo, 1, posicion);
+        T valor=element();
         posicion--;
         return valor;
     }
 
     @Override
-    public T top() throws EmptyStackException {
-        if(posicion==0) throw new EmptyStackException();
-        T valor=(T)arreglo[posicion-1];
+    public T element() throws NullPointerException {
+        if(posicion==0) throw new NullPointerException();
+        T valor=(T)arreglo[0];
         return valor;
     }
 
