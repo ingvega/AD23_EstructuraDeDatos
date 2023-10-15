@@ -17,6 +17,7 @@ public class Queue<T> extends ADTQueue<T> implements Iterable<T> {
 
     private Object[] arreglo = new Object[10];
     private int posicion = 0;
+    
 
     @Override
     public void add(T valor) {
@@ -53,15 +54,18 @@ public class Queue<T> extends ADTQueue<T> implements Iterable<T> {
 
     @Override
     public Iterator<T> iterator() {
+        
         Iterator<T> iterador = new Iterator<T>() {
+            private int puntero=0;
             @Override
             public boolean hasNext() {
-                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                return (puntero<posicion);
             }
 
             @Override
             public T next() {
-                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                puntero+=1;
+                return (T)arreglo[puntero-1];
             }
         };
         return iterador;
