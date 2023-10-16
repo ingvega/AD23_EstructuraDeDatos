@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package coleccionesenlazadas;
+package coleccionesenlazadas.linkedqueue;
 
 import java.util.EmptyStackException;
 
@@ -11,11 +11,11 @@ import java.util.EmptyStackException;
  *
  * @author paveg
  */
-public abstract class ADTStack<T> {
+public abstract class ADTQueue<T> {
     
-    public abstract void push(T valor);
-    public abstract T pop() throws EmptyStackException;
-    public abstract T top() throws EmptyStackException;
+    public abstract void add(T valor);
+    public abstract T remove() throws EmptyCollectionException;
+    public abstract T peek() throws EmptyCollectionException;
     public abstract boolean empty();
    
 }
