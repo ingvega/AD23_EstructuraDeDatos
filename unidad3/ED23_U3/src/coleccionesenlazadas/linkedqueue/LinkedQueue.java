@@ -5,11 +5,14 @@
  */
 package coleccionesenlazadas.linkedqueue;
 
+import java.util.Iterator;
+
 /**
  *
  * @author paveg
  */
-public class LinkedQueue<T> extends ADTQueue<T> {
+public class LinkedQueue<T> extends ADTQueue<T> 
+                implements Iterable<T> {
 
     private Node last;
     private Node first;
@@ -36,14 +39,11 @@ public class LinkedQueue<T> extends ADTQueue<T> {
             T valor = first.value;
             Node siguiente = first.next;
             first = siguiente;
-            if (siguiente != null) {
-                //Cuando aún hay al menos un elemento en la colección
+            if (siguiente != null) {//Cuando aún hay al menos un elemento en la colección
                 siguiente.previous = null;
-            } else {
-                //La colección está vacía de modo que último también se reseteará a null
+            } else {//La colección está vacía de modo que último también se reseteará a null
                 last = null;
             }
-
             return valor;
         } else {
             throw new EmptyCollectionException();
@@ -67,6 +67,30 @@ public class LinkedQueue<T> extends ADTQueue<T> {
         } else {
             return false;
         }
+    }
+
+    @Override
+    public Iterator<T> iterator() {
+        
+        Iterator<T> iterador=new Iterator<T>() {
+            Node apuntador=first;
+            @Override
+            public boolean hasNext() {
+                if(apuntador!=null){
+                    return true;
+                }else{
+                    return false;
+                }
+            }
+
+            @Override
+            public T next() {
+                T valor=apuntador.value;
+                apuntador=apuntador.next;
+                return valor;
+            }
+        };
+        return iterador;
     }
 
     private class Node {

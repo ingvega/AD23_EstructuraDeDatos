@@ -12,16 +12,22 @@ import coleccionesenlazadas.linkedqueue.LinkedQueue;
  * @author paveg
  */
 public class PruebaLinkedQueue {
+
     public static void main(String[] args) {
         LinkedQueue<String> valores=new LinkedQueue<>();
         for (int i = 0; i < 10; i++) {
             valores.add("valor " + (i+1));
         }
-        
+        /*
         System.out.println(valores.remove());
         System.out.println(valores.remove());
         while(!valores.empty()){
             System.out.println(valores.remove());
+        }*/
+        for (String valor: valores) {
+            System.out.println(valor);
         }
     }
+
+
 }
