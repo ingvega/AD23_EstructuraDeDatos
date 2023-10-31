@@ -16,6 +16,7 @@ public class UsoStack {
     public static void main(String[] args) {
         Stack<String> pila;
         ArrayList<String> lista;
+        Integer x=5;
         
     }
 }

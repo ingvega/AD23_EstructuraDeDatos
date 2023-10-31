@@ -36,8 +36,12 @@ public class Funcionamiento {
         }
         
         PriorityQueue<Alumno> pqa=new PriorityQueue<>();
-        pqa.add(new Alumno("s11","Juan Perez"));
-        pqa.add(new Alumno("S01","Alberto Medina"));
+        pqa.add(new Alumno("S02","Medina Juan","Sistemas Automotrices",5));
+        pqa.add(new Alumno("T11","Perez Juan ","Sistemas Automotrices",5 ));
+        pqa.add(new Alumno("S01","Medina Alberto","Sistemas Computacionales",1));
+        
+        System.out.println("Medina Juan".compareTo("Medina Alberto"));
+        System.out.println("Medina Alberto".compareTo("Medina Juan"));
         
         for (Alumno alumno : pqa) {
             System.out.println(alumno);
@@ -45,19 +49,44 @@ public class Funcionamiento {
     }
 }
 
-class Alumno implements Comparable<Alumno>{
+class Alumno {// implements Comparable<Alumno>{
     private String noControl;
     private String nombre;
+    private String carrera;
+    private int semestre;
 
-    public Alumno(String noControl, String nombre) {
+    public Alumno(String noControl, String nombre, String carrera, int semestre) {
         this.noControl = noControl;
         this.nombre = nombre;
+        this.carrera = carrera;
+        this.semestre=semestre;
     }
 
     @Override
     public String toString() {
-        return "Alumno{" + "noControl=" + noControl + ", nombre=" + nombre + '}';
+        return "Alumno{" + "noControl=" + noControl + ", nombre=" + nombre + ", carrera=" + carrera + ", semestre=" + semestre + '}';
     }
+
+    
+
+    public int getSemestre() {
+        return semestre;
+    }
+
+    public void setSemestre(int semestre) {
+        this.semestre = semestre;
+    }
+    
+    
+
+    public String getCarrera() {
+        return carrera;
+    }
+
+    public void setCarrera(String carrera) {
+        this.carrera = carrera;
+    }
+    
     
     public String getNoControl() {
         return noControl;
@@ -75,10 +104,37 @@ class Alumno implements Comparable<Alumno>{
         this.nombre = nombre;
     }
 
+//    @Override
+//    public int compareTo(Alumno o) {
+//            return this.noControl.toLowerCase().compareTo(o.noControl.toLowerCase());
+//    }
+/*    
     @Override
     public int compareTo(Alumno o) {
-            return this.noControl.toLowerCase().compareTo(o.noControl.toLowerCase());
-    }
-    
-    
+        //this vs o
+        //Comparar carrera
+        //Cuando el compareTo de la carrera no sea 0 (es mayor o menor)
+        //ese será el valor a devolver
+        if(this.carrera.compareToIgnoreCase(o.carrera)!=0){
+            return this.carrera.compareToIgnoreCase(o.carrera);
+        }
+        if(this.semestre<o.semestre){
+            return -1;
+        }else if(this.semestre>o.semestre){
+            return 1;
+        }
+//        Integer sem=this.semestre;
+//        Integer oSem=o.semestre;
+//        if(sem.compareTo(oSem)!=0){
+//            //Solo si la carrera es la misma revisará el semestre
+//            //Comparar el semestre
+//            return sem.compareTo(oSem);
+//        }
+        
+        //Solo si la carrera es la misma revisará el nombre
+        //Comparar el nombre
+        return this.nombre.compareToIgnoreCase(o.nombre);
+        
+        
+    }   */ 
 }

@@ -16,7 +16,6 @@ public class Stack<T> extends ADTStack<T> {
     private Object[] arreglo=new Object[10];
     private int posicion=0;
     
-    
     @Override
     public void push(T valor) {
         if(arreglo.length>posicion){

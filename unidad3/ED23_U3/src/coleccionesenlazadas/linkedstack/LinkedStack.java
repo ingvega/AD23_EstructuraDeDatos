@@ -57,6 +57,7 @@ public class LinkedStack<T> extends ADTStack<T>{
             return false;
         }
     }
+    
     private class Node{
         T value;
         Node link;
