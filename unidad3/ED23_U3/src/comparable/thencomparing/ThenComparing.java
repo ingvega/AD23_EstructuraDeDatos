@@ -33,8 +33,11 @@ public class ThenComparing {
         pqCA.add(new Alumno("S01","Medina Alberto","Sistemas Computacionales",1));
         pqCA.add(new Alumno("T11","Perez Juan ","Sistemas Automotrices",5 ));
         
-        for (Alumno alumno : pqCA) {
-            System.out.println(alumno);
+//        for (Alumno alumno : pqCA) {
+//            System.out.println(alumno);
+//        }
+        while(!pqCA.isEmpty()){
+            System.out.println(pqCA.poll());
         }
         System.out.println("");
         PriorityQueue<Alumno> pqCSA=new PriorityQueue<>(
@@ -42,12 +45,15 @@ public class ThenComparing {
                                     .thenComparing(Alumno::getSemestre,Comparator.reverseOrder())
                                     .thenComparing(Alumno::getNombre)
         );
-        pqCSA.add(new Alumno("S02","Zavala Juan","Sistemas Automotrices",3));
+        pqCSA.add(new Alumno("S02","Zavala Juan","Sistemas Automotrices",8));
         pqCSA.add(new Alumno("S01","Medina Alberto","Sistemas Computacionales",1));
         pqCSA.add(new Alumno("T11","Perez Juan ","Sistemas Automotrices",5 ));
         
-        for (Alumno alumno : pqCSA) {
-            System.out.println(alumno);
+//        for (Alumno alumno : pqCSA) {
+//            System.out.println(alumno);
+//        }
+        while(!pqCSA.isEmpty()){
+            System.out.println(pqCSA.poll());
         }
     }
 }
