@@ -22,3 +22,11 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
+/unidad3/ED23_U3/nbproject/private/
+/unidad3/ED23_U3/*.xml
+/unidad3/ED23_U3/*.mf
+/unidad3/ED23_U3/nbproject/*.xml
+/unidad3/ED23_U3/nbproject/*.properties
+/unidad3/ED23_U3/build/
+/unidad4/ED23_U4/nbproject/.gitignore
+/unidad4/ED23_U4/nbproject/private/.gitignore
