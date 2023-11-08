@@ -24,6 +24,16 @@ public class Nodo {
         this.izdo=izdo;
         this.dcho=dcho;
     }
+    
+    public void recorrerPreorden(){
+        System.out.println(this.dato);
+        if (izdo!=null) 
+            izdo.recorrerPreorden();
+        
+        if (dcho!=null) 
+            dcho.recorrerPreorden();
+        
+    }
 
     public Object getDato() {
         return dato;

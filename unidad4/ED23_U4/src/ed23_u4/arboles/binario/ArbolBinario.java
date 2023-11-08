@@ -22,6 +22,10 @@ public class ArbolBinario {
         raiz = new Nodo(ramaIzq,dato,ramaDer);
     }*/
     
+    public void imprimir(){
+        raiz.recorrerPreorden();
+    }
+    
     public Nodo getRaiz(){
         return raiz;
     }
