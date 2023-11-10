@@ -23,7 +23,15 @@ public class ArbolBinario {
     }*/
     
     public void imprimir(){
-        raiz.recorrerPreorden();
+        if(raiz!=null)
+            raiz.recorrerPreorden();
+    }
+    
+    public int contarNodos(){
+        if(raiz!=null)
+            return raiz.contarNodos();
+        else
+            return 0;
     }
     
     public Nodo getRaiz(){

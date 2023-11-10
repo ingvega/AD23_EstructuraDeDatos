@@ -47,9 +47,10 @@ public class Prueba {
         
         Nodo G=nDe.getDcho();
         G.setIzdo(new Nodo("N"));
-        G.setDcho(new Nodo("M"));
+        G.setDcho(new Nodo("O"));
         
         ab.imprimir();
+        System.out.println(ab.contarNodos());
     }
     
     

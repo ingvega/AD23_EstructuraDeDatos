@@ -26,13 +26,24 @@ public class Nodo {
     }
     
     public void recorrerPreorden(){
-        System.out.println(this.dato);
+        
         if (izdo!=null) 
             izdo.recorrerPreorden();
         
         if (dcho!=null) 
-            dcho.recorrerPreorden();
+            dcho.recorrerPreorden();   
+        System.out.println(this.dato);
+    }
+    
+    public int contarNodos(){
+        int cont=1;
         
+        if (izdo!=null) 
+            cont+=izdo.contarNodos();
+        
+        if (dcho!=null) 
+            cont+=dcho.contarNodos();
+        return cont;
     }
 
     public Object getDato() {
