@@ -32,29 +32,30 @@ public class ArbolBinarioDeBusqueda<T> {
         }
     }
     
-    public boolean buscar(T dato) {
+    public T buscar(T dato) {
         Comparable cDato = (Comparable) dato;
         if (estaVacio()) {
-            return false;
+            throw new NullPointerException();
         } else {
             return buscar(cDato, raiz);
         }
     }
     
-    private boolean buscar(Comparable cDato, Nodo raiz) {
+    private T buscar(Comparable cDato, Nodo raiz) {
         int comparacion = cDato.compareTo(raiz.getDato());
         //El dato ya existe en el árbol
         if (comparacion == 0) {
-            return true;
+            //return (T)cDato;
+            return raiz.getDato();
         } else if (comparacion < 0) {
             if (raiz.izdo == null) {
-                return false;
+                throw new NullPointerException();
             } else {
                 return buscar(cDato, raiz.getIzdo());
             }
         } else {
             if (raiz.dcho == null) {
-                return false;
+                throw new NullPointerException();
             } else {
                 return buscar(cDato, raiz.getDcho());
             }
