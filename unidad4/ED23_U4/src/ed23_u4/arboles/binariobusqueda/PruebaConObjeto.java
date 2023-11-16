@@ -26,9 +26,23 @@ public class PruebaConObjeto {
         arbol.agregar(new Alumno("E20120090","LUIS URIBE","ELECTRONICA"));
         arbol.agregar(new Alumno("G22120145","ANA HERNANDEZ","GESTION"));
         arbol.agregar(new Alumno("S21120023","ANDRES LUNA","SISTEMAS COMP"));
+        arbol.agregar(null);
         //arbol.imprimir();
         
         System.out.println(arbol.buscar(new Alumno("C21120235",null,null)));
         
     }
 }
+
+/*
+ft
+iop
+fy
+we
+ran
+aty
+fast
+
+
+ft
+ */
