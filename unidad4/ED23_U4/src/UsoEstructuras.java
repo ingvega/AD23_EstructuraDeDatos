@@ -20,12 +20,24 @@ public class UsoEstructuras {
         carreras.put("G","GESTION");
         carreras.put("E","ELECTRONICA");
         carreras.put("S","SISTEMAS COMP");
+        
+        //Iterar todas las claves (todas las inciales)
+        System.out.println("INICIALES DE LAS CARRERAS");
+        for(String inicial:carreras.keySet()){
+            System.out.println(inicial);
+        }
+        
+        System.out.println("NOMBRES DE LAS CARRERAS");
+        for(String carrera:carreras.values()){
+            System.out.println(carrera);
+        }
+        
         for (Map.Entry<String, String> entry : carreras.entrySet()) {
             String key = entry.getKey();
             String value = entry.getValue();
-            
+            System.out.println(key + "-" + value);
         }
-        
+        /*
         TreeSet<String> coleccion=new TreeSet<>();
         
         System.out.println(coleccion.add("D"));
@@ -39,7 +51,7 @@ public class UsoEstructuras {
         for (String string : coleccion) {
             System.out.println(string);
         }
-        
+        */
         
         
         
