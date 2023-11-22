@@ -10,16 +10,23 @@ package grafo;
  * @author paveg
  */
 public class GrafoMatriz {
+
     private int numVerts;
     public static int maxVerts = 20;
     private Vertice[] verts;
     private int[][] matAd;
+    private boolean dirigido;
 
-    public GrafoMatriz() {
-        this(maxVerts);
+    public boolean isDirigido() {
+        return dirigido;
     }
 
-    public GrafoMatriz(int mx) {
+    public GrafoMatriz(boolean dirigido) {
+        this(maxVerts, dirigido);
+    }
+
+    public GrafoMatriz(int mx, boolean dirigido) {
+        this.dirigido = dirigido;
         matAd = new int[mx][mx];
         verts = new Vertice[mx];
         for (int i = 0; i < mx; i++) {
@@ -31,7 +38,6 @@ public class GrafoMatriz {
 
     private int buscarVertice(String nombre) {
         Vertice v = new Vertice(nombre);
-
         for (int i = 0; i < numVerts; i++) {
             if (verts[i].equals(v)) {
                 return i;
@@ -40,12 +46,14 @@ public class GrafoMatriz {
         return -1;
     }
 
-    public void agregarVertice(String nombre) {
+    public boolean agregarVertice(String nombre) {
         if (buscarVertice(nombre) == -1) {
             Vertice v = new Vertice(nombre);
             v.setNumVertice(numVerts);
             verts[numVerts++] = v;
+            return true;
         }
+        return false;
     }
 
     public void agregarArco(String nomVerticeA, String nomVerticeB) throws Exception {
@@ -56,6 +64,9 @@ public class GrafoMatriz {
             throw new Exception("Vértice no existe");
         }
         matAd[va][vb] = 1;
+        if (!dirigido) {
+            matAd[vb][va] = 1;
+        }
     }
 
     public void agregarArco(String nomVerticeA, String nomVerticeB, int peso) throws Exception {
@@ -66,8 +77,11 @@ public class GrafoMatriz {
             throw new Exception("Vértice no existe");
         }
         matAd[va][vb] = peso;
+        if (!dirigido) {
+            matAd[vb][va] = peso;
+        }
     }
-    
+
     public int adyacente(String nomVerticeA, String nomVerticeB) throws Exception {
         int va, vb;
         va = buscarVertice(nomVerticeA);
